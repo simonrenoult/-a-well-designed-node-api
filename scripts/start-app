@@ -1,0 +1,14 @@
+#! /usr/bin/env bash
+
+if [ -z "$NODE_ENV" ]; then
+  npm run watch
+  exit 0
+fi
+
+if [ "$NODE_ENV" == "development" ]; then
+  npm run watch
+  exit 0
+fi
+
+npm start
+exit 0
