@@ -6,19 +6,24 @@
   "author": "Simon RENOULT <simon.renoult@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node .",
-    "watch": "nodemon .",
-    "lint": "eslint ."
+    "start": "node bin/www",
+    "watch": "nodemon bin/www --watch index.js --watch bin/www",
+    "lint": "eslint .",
+    "test": "npm run test-integ",
+    "test-integ": "mocha spec/integ/*.integ.js"
   },
   "dependencies": {
     "express": "^4.14.0",
     "nconf": "^0.8.4"
   },
   "devDependencies": {
+    "chai": "^3.5.0",
     "eslint": "^3.9.1",
     "eslint-config-standard": "^6.2.1",
     "eslint-plugin-promise": "^3.3.1",
     "eslint-plugin-standard": "^2.0.1",
-    "nodemon": "^1.11.0"
+    "mocha": "^3.1.2",
+    "nodemon": "^1.11.0",
+    "supertest": "^2.0.1"
   }
 }

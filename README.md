@@ -12,6 +12,6 @@
 -   [x] Linter using `eslint`
 -   [x] Configuration using both file and environment variable
 -   [ ] Unit tests
--   [ ] End to end tests
+-   [x] End to end tests
 -   [ ] Logging
 -   [ ] A well designed app

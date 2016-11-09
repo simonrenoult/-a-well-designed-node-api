@@ -62,3 +62,13 @@ lint:
 .PHONY: watch
 watch:
 	npm run watch
+
+.SILENT: test
+.PHONY: test
+test:
+	npm run test
+
+.SILENT: test-integ
+.PHONY: test-integ
+test-integ:
+	npm run test-integ
