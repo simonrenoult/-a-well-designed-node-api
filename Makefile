@@ -14,6 +14,8 @@ help:
 	echo "  start-app         start the nodejs app"
 	echo "  restart           restart the container"
 	echo "  stop              stop the container"
+	echo "  lint              run the linter"
+	echo "  watch             start the nodejs app and watch changes"
 	echo
 
 .SILENT: install
@@ -55,3 +57,8 @@ start-app:
 .PHONY: lint
 lint:
 	npm run lint
+
+.SILENT: watch
+.PHONY: watch
+watch:
+	npm run watch
