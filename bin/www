@@ -2,7 +2,7 @@
 const app = require('..')
 const conf = require('../config')
 const PORT = conf.get('port') || 3000
-const HOST = conf.get('host') || '127.0.0.1'
+const HOST = conf.get('host') || '0.0.0.0'
 
 const server = app.listen(PORT, HOST, () => {
   const fullAddress = `${server.address().address}:${server.address().port}`
