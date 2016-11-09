@@ -1,7 +1,7 @@
 const sinon = require('sinon')
-const helloWorld = require('../../lib/hello-world')
+const helloWorld = require('../../../lib/hello-world/handlers')
 
-describe('HelloWorld', () => {
+describe('hello-world handlers', () => {
   describe('.sayHello()', () => {
     it('calls res.send once', () => {
       // Given
