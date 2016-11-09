@@ -16,6 +16,9 @@ help:
 	echo "  stop              stop the container"
 	echo "  lint              run the linter"
 	echo "  watch             start the nodejs app and watch changes"
+	echo "  test              run linter, unit and integration tests"
+	echo "  test-integ        run the integration tests"
+	echo "  test-unit         run test unit tests"
 	echo
 
 .SILENT: install
