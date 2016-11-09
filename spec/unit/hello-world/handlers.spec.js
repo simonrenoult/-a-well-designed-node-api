@@ -1,5 +1,5 @@
 const sinon = require('sinon')
-const helloWorld = require('../../../lib/hello-world/handlers')
+const helloWorldHandlers = require('../../../lib/hello-world/handlers')
 
 describe('hello-world handlers', () => {
   describe('.sayHello()', () => {
@@ -10,7 +10,7 @@ describe('hello-world handlers', () => {
       const fakeRes = { send: sendStub }
 
       // When
-      helloWorld.sayHello(fakeReq, fakeRes)
+      helloWorldHandlers.sayHello(fakeReq, fakeRes)
 
       // Then
       sinon.assert.calledOnce(sendStub)
@@ -22,7 +22,7 @@ describe('hello-world handlers', () => {
       const fakeRes = { send: sendStub }
 
       // When
-      helloWorld.sayHello(fakeReq, fakeRes)
+      helloWorldHandlers.sayHello(fakeReq, fakeRes)
 
       // Then
       sinon.assert.calledWith(sendStub, 'hello world!')
