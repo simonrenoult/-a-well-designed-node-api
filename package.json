@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "express": "^4.14.0",
+    "ioredis": "^2.4.0",
     "nconf": "^0.8.4"
   },
   "devDependencies": {
@@ -26,6 +27,7 @@
     "eslint-plugin-standard": "^2.0.1",
     "mocha": "^3.1.2",
     "nodemon": "^1.11.0",
+    "proxyquire": "^1.7.10",
     "sinon": "^1.17.6",
     "supertest": "^2.0.1"
   }
