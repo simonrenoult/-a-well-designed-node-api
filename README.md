@@ -11,7 +11,7 @@
 -   [x] Makefile to wrap it up
 -   [x] Linter using `eslint`
 -   [x] Configuration using both file and environment variable
--   [ ] Unit tests
+-   [x] Unit tests
 -   [x] End to end tests
 -   [ ] Logging
--   [ ] A well designed app
+-   [x] A well designed app
