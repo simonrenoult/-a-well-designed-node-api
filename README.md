@@ -10,7 +10,7 @@
 -   [x] Application lifecycle scripts
 -   [x] Makefile to wrap it up
 -   [x] Linter using `eslint`
--   [ ] Configuration using both file and environment variable
+-   [x] Configuration using both file and environment variable
 -   [ ] Unit tests
 -   [ ] End to end tests
 -   [ ] Logging
