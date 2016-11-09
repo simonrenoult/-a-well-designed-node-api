@@ -9,7 +9,7 @@
 -   [x] Dockerfile support
 -   [x] Application lifecycle scripts
 -   [x] Makefile to wrap it up
--   [ ] Linter using `eslint`
+-   [x] Linter using `eslint`
 -   [ ] Configuration using both file and environment variable
 -   [ ] Unit tests
 -   [ ] End to end tests

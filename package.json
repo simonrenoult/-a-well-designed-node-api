@@ -7,12 +7,17 @@
   "license": "MIT",
   "scripts": {
     "start": "node .",
-    "watch": "nodemon ."
+    "watch": "nodemon .",
+    "lint": "eslint ."
   },
   "dependencies": {
     "express": "^4.14.0"
   },
   "devDependencies": {
+    "eslint": "^3.9.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-plugin-promise": "^3.3.1",
+    "eslint-plugin-standard": "^2.0.1",
     "nodemon": "^1.11.0"
   }
 }

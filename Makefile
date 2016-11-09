@@ -50,3 +50,8 @@ start-container:
 .PHONY: start-app
 start-app:
 	./scripts/start-app
+
+.SILENT: lint
+.PHONY: lint
+lint:
+	npm run lint
