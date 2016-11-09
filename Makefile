@@ -72,3 +72,8 @@ test:
 .PHONY: test-integ
 test-integ:
 	npm run test-integ
+
+.SILENT: test-unit
+.PHONY: test-unit
+test-unit:
+	npm run test-unit
