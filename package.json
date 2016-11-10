@@ -10,9 +10,9 @@
     "watch": "nodemon bin/www --watch index.js --watch bin/www",
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "test": "npm run test-unit && npm run test-integ",
-    "test-integ": "mocha spec/integ/*.integ.js",
-    "test-unit": "mocha spec/unit/**/*.spec.js"
+    "test": "NODE_ENV=test npm run test-unit && npm run test-integ",
+    "test-integ": "NODE_ENV=test mocha spec/integ/*.integ.js",
+    "test-unit": "NODE_ENV=test mocha spec/unit/**/*.spec.js"
   },
   "dependencies": {
     "express": "^4.14.0",
