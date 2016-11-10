@@ -1,0 +1,10 @@
+#! /usr/bin/env bash
+
+CONTAINER_NAME=redis-container
+
+docker run \
+  --detach \
+  --name ${CONTAINER_NAME} \
+  --expose 6379 \
+  --net=api \
+  redis \

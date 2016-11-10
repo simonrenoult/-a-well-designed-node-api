@@ -4,19 +4,29 @@ help:
 	echo
 	echo "Usage: make <command>"
 	echo
-	echo "Where <command> is one of:"
+	echo "Application lifecycle management command list."
+	echo
+	echo "Commands:"
 	echo
 	echo "  help              print this help"
-	echo "  install           install dependencies (using yarn)"
+	echo
+	echo "  > Using docker (recommended):"
+	echo
 	echo "  build             build a new Docker image named api-image"
-	echo "  start             start the app within a container"
+	echo "  test              run linter, unit and integration tests"
+	echo "  test-unit         run unit tests"
+	echo "  test-integ        run integration tests"
+	echo "  start             shortcut for start-container"
 	echo "  start-container   start the app within a container"
-	echo "  start-app         start the nodejs app"
 	echo "  restart           restart the container"
 	echo "  stop              stop the container"
+	echo
+	echo "  > Using host:"
+	echo
+	echo "  install           install dependencies (using yarn)"
+	echo "  start-app         start the nodejs app"
 	echo "  lint              run the linter"
 	echo "  watch             start the nodejs app and watch changes"
-	echo "  test              run linter, unit and integration tests"
 	echo "  test-integ        run the integration tests"
 	echo "  test-unit         run test unit tests"
 	echo
@@ -34,7 +44,7 @@ build:
 .SILENT: start
 .PHONY: start
 start:
-	./scripts/start-container
+	./scripts/start
 
 .SILENT: stop
 .PHONY: stop
@@ -69,14 +79,14 @@ watch:
 .SILENT: test
 .PHONY: test
 test:
-	npm run test
+	./scripts/test
 
 .SILENT: test-integ
 .PHONY: test-integ
 test-integ:
-	npm run test-integ
+	./scripts/test-integ
 
 .SILENT: test-unit
 .PHONY: test-unit
 test-unit:
-	npm run test-unit
+	./scripts/test-unit

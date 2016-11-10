@@ -1,0 +1,14 @@
+#! /usr/bin/env bash
+
+CONTAINER_NAME=api-container
+
+docker run --name=${CONTAINER_NAME} \
+  --interactive \
+  --tty \
+  --volume $(pwd):/app \
+  --publish 3000:3000 \
+  --env NODE_ENV \
+  --env SCOPE \
+  --env REDIS__HOST \
+  --net=api \
+  api-image

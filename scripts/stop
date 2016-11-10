@@ -1,2 +1,6 @@
 #! /usr/bin/env bash
-docker stop api-container && docker rm api-container
+docker stop api-container
+docker rm api-container
+
+docker stop redis-container
+docker rm redis-container

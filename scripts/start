@@ -1,2 +1,10 @@
 #! /usr/bin/env bash
-./scripts/start-container
+
+./scripts/start-redis-container
+
+until [ "`/usr/bin/docker inspect -f {{.State.Running}} redis-container`"=="true" ]; do
+    echo "nop"
+    sleep 0.1;
+done;
+
+REDIS__HOST=redis-container ./scripts/start-app-container
