@@ -15,3 +15,4 @@
 -   [x] End to end tests
 -   [ ] Logging
 -   [x] A well designed app
+-   [x] Dependency injection (service registry middleware)

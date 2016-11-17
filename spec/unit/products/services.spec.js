@@ -1,53 +1,49 @@
 const sinon = require('sinon')
 const chai = require('chai')
-const proxyquire = require('proxyquire').noCallThru()
 
+const fakeStore = { get () {} }
+const services = require('../../../lib/products/services')(fakeStore)
 const expect = chai.expect
-const fakeRedis = { get () {} }
-const productsServices = proxyquire('../../../lib/products/services', {
-  '../utils/redis': fakeRedis
-})
 
 describe('products services', () => {
+  before(() => {
+    // Given
+    this.fakeStoreGet = sinon.stub(fakeStore, 'get')
+  })
+  beforeEach(() => {
+    this.fakeStoreGet.reset()
+  })
+  after(() => {
+    this.fakeStoreGet.restore()
+  })
   describe('.findAll()', () => {
-    before(() => {
-      // Given
-      this.redisGetStub = sinon.stub(fakeRedis, 'get')
-    })
-    beforeEach(() => {
-      this.redisGetStub.reset()
-    })
-    after(() => {
-      this.redisGetStub.restore()
-    })
-    describe('when redis.get fails', () => {
+    describe('when store.get fails', () => {
       before(() => {
-        // Given
-        this.redisGetStub.callsArgWith(1, new Error('fakeError'), null)
+        this.fakeStoreGet.callsArgWith(1, new Error('fakeError'), null)
       })
       it('returns an error', () => {
         // When
-        const findAllPromise = productsServices.findAll()
+        const findAllPromise = services.findAll()
 
         // Then
         return findAllPromise.catch(error => expect(error).to.exist)
       })
     })
-    describe('when redis.get returns an array', () => {
+    describe('when store.get returns an array', () => {
       before(() => {
         // Given
-        this.redisGetStub.callsArgWith(1, null, [])
+        this.fakeStoreGet.callsArgWith(1, null, [])
       })
-      it('calls redis.get once', () => {
+      it('calls store.get once', () => {
         // When
-        const findAllPromise = productsServices.findAll()
+        const findAllPromise = services.findAll()
 
         // Then
-        return findAllPromise.then(() => sinon.assert.calledOnce(this.redisGetStub))
+        return findAllPromise.then(() => sinon.assert.calledOnce(this.fakeStoreGet))
       })
       it('returns the array', () => {
         // When
-        const findAllPromise = productsServices.findAll()
+        const findAllPromise = services.findAll()
 
         // Then
         return findAllPromise.then(products => expect(products).to.deep.equal([]))
